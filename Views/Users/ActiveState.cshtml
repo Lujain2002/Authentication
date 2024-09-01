@@ -1,0 +1,33 @@
+﻿@model List<User>
+@{
+    ViewData["Title"] = "ActiveState";
+}
+
+<h1>ActiveState</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Active State</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var User in Model)
+        {
+            <tr>
+                <td>@User.Name</td>
+                <td>@User.Email</td>
+                <td>@User.IsActive</td>
+                <td>
+                    <a asp-controller="Users" asp-action="Active" asp-route-id="@User.Id">Active</a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+   
+   
+</table>
+
